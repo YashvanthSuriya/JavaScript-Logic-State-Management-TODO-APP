@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My To-Do List</h1>
+            <p class="subtitle">Things I need to get done</p>
+        </header>
+
+        <!-- Add new task form -->
+        <form id="task-form">
+            <input
+                type="text"
+                id="task-input"
+                placeholder="Add a new task..."
+                autocomplete="off"
+                required
+            >
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- Filter buttons -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <span id="counter" class="counter"></span>
+        </div>
+
+        <!-- Task list (rendered by JS) -->
+        <ul id="task-list"></ul>
+
+        <!-- Empty message -->
+        <p id="empty-msg" class="empty-msg" style="display:none;">No tasks yet. Add one above!</p>
+
+        <div class="footer">
+            <button id="clear-btn">Clear completed</button>
+        </div>
+    </div>
+
+    <!-- Edit modal -->
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="text" id="edit-input">
+            <div class="modal-buttons">
+                <button id="cancel-edit">Cancel</button>
+                <button id="save-edit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
